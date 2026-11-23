@@ -6,6 +6,7 @@ build-backend = "hatchling.build"
 name = "treescreen"
 version = "0.1.0"
 description = "Fast, model-free screen: which columns to keep for a tree model"
+license = "MPL-2.0"
 requires-python = ">=3.10"
 dependencies = ["polars>=1.0", "numpy>=1.24"]
 

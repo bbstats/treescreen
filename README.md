@@ -103,3 +103,9 @@ python benchmarks/wide_junk_lgbm.py
 ```
 
 Design notes, measurements and open questions: `CLAUDE.md`, `docs/`.
+
+## License
+
+[MPL-2.0](LICENSE). Use treescreen in any project, open or closed source, commercial or not.
+If you change treescreen's own files and share the result, those changed files must stay
+under MPL-2.0 with their source available. Your own code that only imports it is not affected.
