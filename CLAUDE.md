@@ -12,6 +12,10 @@ Primary use: a pre-fit screen for gradient-boosted trees, used inside sklearn CV
   [-o table.csv] [--print-keep] [--classes]` (csv / tsv / parquet / feather / ndjson); also
   the `treescreen` console script in pyproject. README quick start shows its output.
 - `tests/`                   41 pytest tests, ~6 s (incl. sklearn check_estimator on both)
+- `.github/workflows/ci.yml`  pytest on push / PR (Ubuntu py3.10-3.14, Windows + macOS py3.13),
+  plus build + `twine check`. `publish.yml`: a published GitHub release `vX.Y.Z` (must match
+  `version` in pyproject) builds and uploads to PyPI by trusted publishing (no token). To
+  release: bump `version`, commit, push, create the release.
 - `benchmarks/wide_junk_lgbm.py`  1,000 uniform columns, 20 real; old rule vs screen vs perfect.
   Takes screen kwargs: `wide_junk_lgbm.py keep_q=0.8`. ~4 min.
 - `benchmarks/junk_by_reason.py`  same data, no fits: real/junk kept by reason. ~10 s.

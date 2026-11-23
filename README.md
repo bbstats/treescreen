@@ -1,8 +1,20 @@
 # treescreen
 
+[![CI](https://github.com/bbstats/treescreen/actions/workflows/ci.yml/badge.svg)](https://github.com/bbstats/treescreen/actions/workflows/ci.yml)
+[![PyPI](https://img.shields.io/pypi/v/treescreen)](https://pypi.org/project/treescreen/)
+
 Find the columns worth keeping before you train a gradient-boosted tree model (LightGBM,
 XGBoost, CatBoost, sklearn HGB). Fast and model-free: no model is trained, every decision
 is a calibrated statistical test.
+
+## Install
+
+```
+pip install treescreen            # polars + numpy only
+pip install "treescreen[sklearn]" # adds the sklearn wrappers (TreeScreen, RecursiveICSelector)
+```
+
+Python 3.10 or newer.
 
 ## Quick start
 
@@ -106,6 +118,6 @@ Design notes, measurements and open questions: `CLAUDE.md`, `docs/`.
 
 ## License
 
-[MPL-2.0](LICENSE). Use treescreen in any project, open or closed source, commercial or not.
+[MPL-2.0](https://github.com/bbstats/treescreen/blob/main/LICENSE). Use treescreen in any project, open or closed source, commercial or not.
 If you change treescreen's own files and share the result, those changed files must stay
 under MPL-2.0 with their source available. Your own code that only imports it is not affected.

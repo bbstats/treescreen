@@ -6,19 +6,47 @@ build-backend = "hatchling.build"
 name = "treescreen"
 version = "0.1.0"
 description = "Fast, model-free screen: which columns to keep for a tree model"
+readme = "README.md"
 license = "MPL-2.0"
+authors = [{ name = "bbstats" }]
 requires-python = ">=3.10"
 dependencies = ["polars>=1.0", "numpy>=1.24"]
+keywords = [
+    "feature selection", "feature screening", "gradient boosting", "lightgbm", "xgboost",
+    "catboost", "polars", "mutual information", "chatterjee xi",
+]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Science/Research",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3 :: Only",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Programming Language :: Python :: 3.14",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+
+[project.urls]
+Homepage = "https://github.com/bbstats/treescreen"
+Issues = "https://github.com/bbstats/treescreen/issues"
 
 [project.scripts]
 treescreen = "treescreen.__main__:main"
 
 [project.optional-dependencies]
 sklearn = ["scikit-learn>=1.6"]
-dev = ["pytest", "scipy", "scikit-learn>=1.6", "pandas", "lightgbm"]
+test = ["pytest", "scipy", "scikit-learn>=1.6", "pandas", "pyarrow"]
+dev = ["pytest", "scipy", "scikit-learn>=1.6", "pandas", "pyarrow", "lightgbm"]
 
 [tool.hatch.build.targets.wheel]
 packages = ["src/treescreen"]
+
+[tool.hatch.build.targets.sdist]
+include = ["src", "tests", "README.md", "LICENSE"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
