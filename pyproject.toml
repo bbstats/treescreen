@@ -1,0 +1,23 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "treescreen"
+version = "0.1.0"
+description = "Fast, model-free screen: which columns to keep for a tree model"
+requires-python = ">=3.10"
+dependencies = ["polars>=1.0", "numpy>=1.24"]
+
+[project.scripts]
+treescreen = "treescreen.__main__:main"
+
+[project.optional-dependencies]
+sklearn = ["scikit-learn>=1.6"]
+dev = ["pytest", "scipy", "scikit-learn>=1.6", "pandas", "lightgbm"]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/treescreen"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
